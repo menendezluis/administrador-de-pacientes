@@ -131,10 +131,12 @@ export default function Formulario(){
                 <input
                 type="time"
                 name="time"
+                step="300"
                 className="u-full-width"
                 onChange={actualizarState}
                 value={time}
                 />
+                <label>Sintomas</label>
                 <textarea
                 name="sintomas"
                 className="u-full-width"
