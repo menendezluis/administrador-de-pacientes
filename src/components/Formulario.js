@@ -131,7 +131,9 @@ export default function Formulario(){
                 <input
                 type="time"
                 name="time"
-                step="300"
+                min="09:00"
+                max="18:00"
+                step="30"
                 className="u-full-width"
                 onChange={actualizarState}
                 value={time}
