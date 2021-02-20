@@ -11,6 +11,8 @@ export default function Formulario(){
         email: '',
         phone: '',
         date: '',
+        time: '',
+        sintomas: '',
     })
     //funcion que se ejecuta al llenar datos
 
@@ -20,7 +22,7 @@ export default function Formulario(){
             [e.target.name]:e.target.value
         })
     }
-    const { name, lastname, email, phone, date} = registro;
+    const { name, lastname, email, phone, date, time, sintomas} = registro;
     const [error, actualizarError] = useState(false);
     
 
@@ -29,7 +31,8 @@ export default function Formulario(){
 //Validando datos
         if (name.trim() === '' || lastname.trim() === '' ||
             email.trim() === '' || phone.trim() === '' ||  
-            date.trim() === ''  ){
+            date.trim() === '' || time.trim() === '' ||
+            sintomas.trim() === ''  ) {
                  //Eliminar mensaje de error
                 actualizarError(true);
                 return;
@@ -37,7 +40,7 @@ export default function Formulario(){
        
         const url = 'https://api.apispreadsheets.com/data/8173/';
         let  payload = {
-            data: [{"Nombre":name,"Apellido":lastname,"Email":email,"Telefono":phone,"Cumpleaños":date}]
+            data: [{"NombreMascota":name,"NombreDueno":lastname,"Email":email,"Telefono":phone,"FechaCita":date,"HoraCita":time,"Sintomas":sintomas}]
         };
         console.log(payload);
             actualizarError(false);
@@ -65,6 +68,8 @@ export default function Formulario(){
                 email: '',
                 phone: '',
                 date: '',
+                time: '',
+                sintomas: ''
             })
             } 
     
@@ -74,7 +79,7 @@ export default function Formulario(){
         <form
         onSubmit={submitForm}
         >
-            { error ? <p className="alerta-error">Para aplicar a la promocion todos 
+            { error ? <p className="alerta-error">Todos 
             los campos son obligatorios  </p>
                  : null
                 }
@@ -114,7 +119,7 @@ export default function Formulario(){
                 onChange={actualizarState}
                 value={phone}
                 />
-                <label>Cumpleaños</label>
+                <label>Fecha</label>
                 <input
                 type="date"
                 name="date"
@@ -122,11 +127,25 @@ export default function Formulario(){
                 onChange={actualizarState}
                 value={date}
                 />
-               
+               <label>Hora</label>
+                <input
+                type="time"
+                name="time"
+                className="u-full-width"
+                onChange={actualizarState}
+                value={time}
+                />
+                <textarea
+                name="sintomas"
+                className="u-full-width"
+                placeholder="Ingrese los sintomas"
+                onChange={actualizarState}
+                value={sintomas}
+                />
                 <button
                 type="submit"
                 className="u-full-width button-primary"
-                >Enviar</button>
+                >Crear cita</button>
         </form>
         </Fragment>
     )
