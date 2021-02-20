@@ -38,7 +38,7 @@ export default function Formulario(){
                 return;
             }     
        
-        const url = 'https://api.apispreadsheets.com/data/8173/';
+        const url = 'https://api.apispreadsheets.com/data/8461/';
         let  payload = {
             data: [{"NombreMascota":name,"NombreDueno":lastname,"Email":email,"Telefono":phone,"FechaCita":date,"HoraCita":time,"Sintomas":sintomas}]
         };
@@ -75,7 +75,7 @@ export default function Formulario(){
     
     return(
         <Fragment>
-        <h2>Registrar cumpleaños</h2>
+        <h2>Registrar Paciente</h2>
         <form
         onSubmit={submitForm}
         >
