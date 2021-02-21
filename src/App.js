@@ -1,5 +1,6 @@
 import React, {Fragment, useState} from 'react';
 import Formulario from './components/Formulario'
+import ListadoCitas from './components/ListadoCitas'
 import './style.css'
 
 export default function App(){
@@ -23,7 +24,7 @@ export default function App(){
                         crearCita = {crearCita} />
                     </div>
                     <div className="one-half column">
-                        2
+                        <ListadoCitas />
                     </div>
                 </div>
             </div>
