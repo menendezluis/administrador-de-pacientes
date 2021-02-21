@@ -2,7 +2,7 @@ import React, {Fragment, useState} from 'react';
 import uuid from 'react-uuid'
 import axios from 'axios';
 
-export default function Formulario(){
+export default function Formulario({crearCita}){
 
     //creando el registro
     const [registro, guardarRegistro] =useState({
@@ -61,6 +61,8 @@ export default function Formulario(){
                // your action on error success
                 console.log(error);
             });
+            //crearCita 
+            crearCita(registro)
             //Reiniciar el form
             guardarRegistro({
                 name: '',
