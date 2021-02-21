@@ -9,7 +9,9 @@ export default function App(){
 
     //Fucnión que tome las citas actuales
     const crearCita = registro => {
-        console.log(registro);
+        guardarCitas([
+            ...citas, registro
+        ]);
     }
     return(
         <Fragment>
