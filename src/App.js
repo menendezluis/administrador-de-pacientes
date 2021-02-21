@@ -12,6 +12,8 @@ export default function App(){
     const [citas, guardarCitas] = useState([]);
 
     useEffect( () => {
+        let citasIniciales = JSON.parse(localStorage.getItem('citas'));
+        
         if(citasIniciales) {
             localStorage.setItem('citas', JSON.stringify(citas))
         } else {
