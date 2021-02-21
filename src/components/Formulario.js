@@ -46,10 +46,7 @@ export default function Formulario({crearCita}){
             actualizarError(false);
              //Asignando un ID
             registro.id = uuid();
-            
-            //crearCita 
             crearCita(registro);
-            
             /*sin hooks
             await axios({
                 url: url,

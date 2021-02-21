@@ -5,7 +5,7 @@ import './style.css'
 export default function App(){
     //Arreglo de citas
 
-    const [registro, guardarRegistro] = useState([]);
+    const [citas, guardarCitas] = useState([]);
 
     //Fucnión que tome las citas actuales
     const crearCita = registro => {
