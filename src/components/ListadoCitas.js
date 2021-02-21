@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function ListadoCitas(){
     return(
-        <h1>listadocitas</h1>
+     <div className="cita">
+         <p>Mascota: <span></span></p>
+     </div>
     )
 }

@@ -24,7 +24,14 @@ export default function App(){
                         crearCita = {crearCita} />
                     </div>
                     <div className="one-half column">
-                        <ListadoCitas />
+                        <h2>Administrar tus citas</h2>
+                        {citas.map(registro => (
+                         <ListadoCitas 
+                         key={registro.id}
+                         registro={registro}
+                         />   
+                        ))}
+                        
                     </div>
                 </div>
             </div>
