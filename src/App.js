@@ -14,6 +14,10 @@ export default function App(){
             ...citas, registro
         ]);
     }
+    const eliminarCita = id => {
+        const nuevasCitas = citas.filter(registro => registro.id !== id);
+        guardarCitas(nuevasCitas);
+    }
     return(
         <Fragment>
             <h1>Administrador de Pacientes</h1>
@@ -29,6 +33,7 @@ export default function App(){
                          <ListadoCitas 
                          key={registro.id}
                          registro={registro}
+                         eliminarCita={eliminarCita}
                          />   
                         ))}
                         
