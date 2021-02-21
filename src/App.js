@@ -1,13 +1,23 @@
-import React, {Fragment, useState} from 'react';
+import React, {Fragment, useState, useEffect} from 'react';
 import Formulario from './components/Formulario'
 import ListadoCitas from './components/ListadoCitas'
 import './style.css'
 
 export default function App(){
     //Arreglo de citas
-
+    let citasIniciales = JSON.parse(localStorage.getItem('citas'));
+    if(!citasIniciales) {
+        citasIniciales = [];
+    }
     const [citas, guardarCitas] = useState([]);
 
+    useEffect( () => {
+        if(citasIniciales) {
+            localStorage.setItem('citas', JSON.stringify(citas))
+        } else {
+            localStorage.setItem('citas', JSON.stringify([]));
+        }
+    }, [citas]);
     //Fucnión que tome las citas actuales
     const crearCita = registro => {
         guardarCitas([
