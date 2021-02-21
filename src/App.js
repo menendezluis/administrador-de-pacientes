@@ -18,6 +18,8 @@ export default function App(){
         const nuevasCitas = citas.filter(registro => registro.id !== id);
         guardarCitas(nuevasCitas);
     }
+    const titulo = citas.length === 0 ? 'No hay citas' : 'Administra tus citas';
+
     return(
         <Fragment>
             <h1>Administrador de Pacientes</h1>
@@ -28,7 +30,7 @@ export default function App(){
                         crearCita = {crearCita} />
                     </div>
                     <div className="one-half column">
-                        <h2>Administrar tus citas</h2>
+                        <h2>{titulo}</h2>
                         {citas.map(registro => (
                          <ListadoCitas 
                          key={registro.id}
