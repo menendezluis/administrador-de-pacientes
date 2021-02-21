@@ -92,7 +92,7 @@ export default function Formulario(){
                 onChange={actualizarState}
                 value={name}
                 />
-                <label>Apellido</label>
+                <label>Nombre Dueño</label>
                  <input
                 type="text"
                 name="lastname"
