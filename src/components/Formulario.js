@@ -46,6 +46,10 @@ export default function Formulario({crearCita}){
             actualizarError(false);
              //Asignando un ID
             registro.id = uuid();
+            
+            //crearCita 
+            crearCita(registro);
+            
             /*sin hooks
             await axios({
                 url: url,
@@ -61,8 +65,6 @@ export default function Formulario({crearCita}){
                // your action on error success
                 console.log(error);
             });
-            //crearCita 
-            crearCita(registro)
             //Reiniciar el form
             guardarRegistro({
                 name: '',

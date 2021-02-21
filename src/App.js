@@ -5,11 +5,11 @@ import './style.css'
 export default function App(){
     //Arreglo de citas
 
-    const [citas, guardarCitas] = useState([]);
+    const [registro, guardarRegistro] = useState([]);
 
     //Fucnión que tome las citas actuales
-    const crearCita = cita => {
-        console.log(cita);
+    const crearCita = registro => {
+        console.log(registro);
     }
     return(
         <Fragment>
